@@ -27,9 +27,7 @@ export default (state = INITIAL_STATE, action) => {
     case CADASTRO_USUARIO_SUCESSO:
       return {
         ...state,
-        nome: '',
-        senha: '',
-        loadingCadastro: false,
+        ...INITIAL_STATE,
       };
     case LOGIN_USUARIO_SUCESSO:
       return {
