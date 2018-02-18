@@ -11,7 +11,6 @@ const initialLayout = {
   width: Dimensions.get('window').width,
 };
 
-
 export default class Principal extends React.Component {
   state = {
     index: 0,

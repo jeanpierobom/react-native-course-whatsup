@@ -6,9 +6,9 @@ import ListaConversaReducer from './ListaConversaReducer';
 import ListaConversasReducer from './ListaConversasReducer';
 
 export default combineReducers({
-    AutenticacaoReducer,
-    AppReducer,
-    ListaContatosReducer,
-    ListaConversaReducer,
-    ListaConversasReducer
+  AutenticacaoReducer,
+  AppReducer,
+  ListaContatosReducer,
+  ListaConversaReducer,
+  ListaConversasReducer,
 });

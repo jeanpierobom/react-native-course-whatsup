@@ -9,25 +9,30 @@ import Principal from './components/Principal';
 import AdicionarContato from './components/AdicionarContato';
 import Conversa from './components/Conversa';
 
-export default props => (
-    <Router navigationBarStyle={styles.navegacao} titleStyle={styles.titulo} >
-        <Scene modal>
-            <Scene key="formLogin" component={FormLogin} title="Login" hideNavBar={true} />
-            <Scene key="formCadastro" component={FormCadastro} title="Cadastro" hideNavBar={false} />
-            <Scene key="boasVindas" component={BoasVindas} title="Bem-Vindo!" hideNavBar={true} />
-            <Scene key="principal" component={Principal} title="Principal" hideNavBar={true} />
-            <Scene key="adicionarContato" component={AdicionarContato} title="Adicionar Contato" hideNavBar={false} />
-            <Scene key="conversa" component={Conversa} title="Conversa" hideNavBar={false} />
-        </Scene>
-    </Router>   
-);
-
 const styles = StyleSheet.create({
-    navegacao: {
-        backgroundColor: '#115e54'
-    },
+  navegacao: {
+    backgroundColor: '#115e54',
+  },
 
-    titulo: {
-        color: 'white'
-    }
+  titulo: {
+    color: 'white',
+  },
 });
+
+export default () => (
+  <Router navigationBarStyle={styles.navegacao} titleStyle={styles.titulo} >
+    <Scene modal>
+      <Scene key="formLogin" component={FormLogin} title="Login" hideNavBar />
+      <Scene key="formCadastro" component={FormCadastro} title="Cadastro" hideNavBar={false} />
+      <Scene key="boasVindas" component={BoasVindas} title="Bem-Vindo!" hideNavBar />
+      <Scene key="principal" component={Principal} title="Principal" hideNavBar />
+      <Scene
+        key="adicionarContato"
+        component={AdicionarContato}
+        title="Adicionar Contato"
+        hideNavBar={false}
+      />
+      <Scene key="conversa" component={Conversa} title="Conversa" hideNavBar={false} />
+    </Scene>
+  </Router>
+);

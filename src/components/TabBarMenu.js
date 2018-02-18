@@ -5,57 +5,56 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { habilitaInclusaoContato } from '../actions/AppActions';
 
-const TabBarMenu = props => (
-    <View style={styles.principal} >
-        <StatusBar backgroundColor="#114d44" />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <View style={styles.viewTitle} >
-                <Text style={styles.txtTitle} >Whatsup?</Text>
-            </View>
+const styles = StyleSheet.create({
+  principal: {
+    backgroundColor: '#115e54',
+    elevation: 4,
+    marginBottom: 1,
+  },
 
-            <View style={{ flexDirection: 'row', marginRight: 20 }}>
-                <View style={{ width: 50, justifyContent: 'center', alignItems: 'center' }} >
-                    <TouchableHighlight 
-                        onPress={ () => { Actions.adicionarContato(); props.habilitaInclusaoContato(); }} 
-                        underlayColor="#114d44">
-                        <Image source={require('../images/adicionar-contato.png')}/>
-                    </TouchableHighlight>
-                </View>
-                <View style={{ justifyContent: 'center' }} >
-                    <Text style={{ fontSize: 20, color: '#fff' }}>Sair</Text>
-                </View>
-            </View>
+  txtTitle: {
+    color: '#fff',
+    fontSize: 20,
+    marginLeft: 20,
+  },
+
+  statusBar: { },
+
+  viewTitle: {
+    height: 50,
+    justifyContent: 'center',
+  },
+
+  tabBar: {
+    backgroundColor: '#115e54',
+    elevation: 0,
+  },
+});
+
+const TabBarMenu = props => (
+  <View style={styles.principal} >
+    <StatusBar backgroundColor="#114d44" />
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View style={styles.viewTitle} >
+        <Text style={styles.txtTitle} >Whatsup?</Text>
+      </View>
+
+      <View style={{ flexDirection: 'row', marginRight: 20 }}>
+        <View style={{ width: 50, justifyContent: 'center', alignItems: 'center' }} >
+          <TouchableHighlight
+            onPress={() => { Actions.adicionarContato(); props.habilitaInclusaoContato(); }}
+            underlayColor="#114d44"
+          >
+            <Image source={require('../images/adicionar-contato.png')} />
+          </TouchableHighlight>
         </View>
-        <TabBar {...props} style={styles.tabBar} />
+        <View style={{ justifyContent: 'center' }} >
+          <Text style={{ fontSize: 20, color: '#fff' }}>Sair</Text>
+        </View>
+      </View>
     </View>
+    <TabBar {...props} style={styles.tabBar} />
+  </View>
 );
 
 export default connect(null, { habilitaInclusaoContato })(TabBarMenu);
-
-const styles = StyleSheet.create({
-    principal: {
-        backgroundColor: '#115e54',
-        elevation: 4,
-        marginBottom: 1
-    },
-
-    txtTitle: {
-        color: '#fff',
-        fontSize: 20,
-        marginLeft: 20
-    },
-
-    statusBar: {
-        
-    },
-
-    viewTitle: {
-        height:50,
-        justifyContent: 'center'
-    },
-
-    tabBar: {
-        backgroundColor: '#115e54',
-        elevation: 0
-    }
-});
