@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/eslint . --ext js",
-    "prepush": "npm run lint",
+    "desativado_prepush": "npm run lint",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },

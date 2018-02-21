@@ -1,3 +1,6 @@
+/* eslint no-unused-vars: 0 */
+/* eslint no-shadow: 0 */
+
 import firebase from 'firebase';
 import b64 from 'base-64';
 import _ from 'lodash';
